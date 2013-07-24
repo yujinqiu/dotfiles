@@ -375,9 +375,9 @@ noremap wj <c-w><down>
 "--------------- 系统剪切板 ---------------
 
 "ctrl-c复制到系统剪切板
-map <C-c> "+y
+" map <C-c> "+y
 "ctrl-v粘贴到系统粘贴板
-map <C-v> "+p
+" map <C-v> "+p
 "----------------------------------------------------------------------1}}}
 
 "--------------  用户自定义命令 --------------------------------------{{{1
@@ -399,3 +399,5 @@ map <C-v> "+p
 "
 autocmd BufWrite *.c :WS
 autocmd BufWrite *.h :WS
+":w!! to sudo write file
+cmap w!! w !sudo tee >/dev/null %

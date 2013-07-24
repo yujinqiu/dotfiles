@@ -1,5 +1,5 @@
 # vim:set noet: 
-.PHONY : vim tmux iterm2
+.PHONY : vim tmux iterm2 zsh git
 
 LNSOPT=-s
 
@@ -23,3 +23,11 @@ tmux:
 
 iterm2:
 	ln $(LNSOPT) $(CURDIR)/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+zsh:
+	ln $(LNSOPT) $(CURDIR)/zsh/.zshrc ~/.zshrc
+	ln $(LNSOPT) $(CURDIR)/zsh/oh-my-zsh ~/.oh-my-zsh
+
+
+git:
+	ln $(LNSOPT) $(CURDIR)/git/.gitconfig ~/.gitconfig
