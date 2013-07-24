@@ -18,3 +18,5 @@
     branch = auto
 [diff]
 	tool = vimdiff
+[core]
+	editor = /usr/bin/vim
