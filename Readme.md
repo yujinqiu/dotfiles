@@ -3,6 +3,16 @@ dotfiles
 
 Mac branch.
 
+事项注意
+--------
+
+首先，更新所有submodule:
+
+    git submodule update --init
+
+如果需要强制建立软连接(以vim为例):
+
+    make vim force=1
 
 vim
 ---
@@ -37,3 +47,13 @@ iterm2
     $ make iterm2
 
 然后安装iterm2/badwolf.itermcolors
+
+git
+---
+
+    $ make git
+
+zsh
+---
+
+    $ make zsh
