@@ -36,6 +36,8 @@ Bundle "garbas/vim-snipmate"
 "-----------------------------------2}}}
 "窗口浏览器
 Bundle "scrooloose/nerdtree"
+"快速查找文件插件CtrlP
+Bundle "kien/ctrlp.vim"
 
 "Jquery
 Bundle "jQuery"
