@@ -61,6 +61,9 @@ Bundle "Lokaltog/vim-easymotion"
 "vim git 插件
 Bundle "tpope/vim-fugitive"
 
+"show 添加的行和删除的行
+Bundle 'airblade/vim-gitgutter'
+
 "for js
 Bundle "pangloss/vim-javascript"
 
@@ -275,6 +278,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeWinSize = 23
 "显示行号
 let NERDTreeShowLineNumbers=1
+"忽略pyc
+let NERDTreeIgnore = ['\.py[co]$']
 "命令T跳转到左边nerdtree
 "---------------------------------------------------------- 2}}}
 

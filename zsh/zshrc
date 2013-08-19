@@ -40,7 +40,7 @@ plugins=(git python pip compleat  extract)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/hit9/.rvm/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/hit9/.rvm/bin
 
 export TERM=screen-256color
 
@@ -60,3 +60,11 @@ export PATH=$PATH:$(brew --prefix)/share/npm/bin
 . ~/z/z.sh
 
 export TERM=screen-256color
+
+k(){ack "$*" --color}
+k!(){ack "$*" --color | less -R}
+sizeof(){du -h "$*"}
+alias json='python -mjson.tool | pygmentize -l json'
+alias todo='~/.todo'
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
