@@ -90,6 +90,8 @@ Bundle "tpope/vim-haml"
 ""
 Bundle "terryma/vim-multiple-cursors"
 
+Bundle "kshenoy/vim-signature"
+
 "-------------------------------------------------------------1}}}
 
 
@@ -100,6 +102,8 @@ filetype plugin indent on
 "--------------------------------------------------------------1}}}
 
 "-------------- 基本-------------------------------------------{{{1
+"去掉边框
+set go=
 syntax enable
 "se nu  "显示行号
 "终端模式:xterm-256color,这个终端模式支持功能键Home,End等

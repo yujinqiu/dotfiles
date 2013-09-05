@@ -68,3 +68,6 @@ alias json='python -mjson.tool | pygmentize -l json'
 alias todo='~/.todo'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
+export PYTHONPATH
