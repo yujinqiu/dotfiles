@@ -1,11 +1,11 @@
 # vim:set noet: 
-.PHONY : vim tmux iterm2 zsh git
+.PHONY : vim tmux iterm2 zsh git ssh
 
-LNSOPT=-s
+LNSOPT=-sv
 
 ifdef force
 	ifeq ($(force),1)
-		LNSOPT=-fs
+		LNSOPT=-svf
 	endif
 endif
 
@@ -31,3 +31,7 @@ zsh:
 
 git:
 	ln $(LNSOPT) $(CURDIR)/git/gitconfig ~/.gitconfig
+ssh:
+	mkdir -p ~/.ssh/
+	ln $(LNSOPT) $(CURDIR)/ssh/config ~/.ssh/config
+	chmod 0600 ~/.ssh/config
