@@ -22,3 +22,7 @@
 	editor = /usr/bin/vim
 [alias]
 	lgg = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\"
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
