@@ -42,7 +42,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/hit9/.rvm/bin
 
-export TERM=screen-256color
+#export TERM=screen-256color
 
 
 # alias for reload zshrc
