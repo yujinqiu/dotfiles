@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+set timeout -1
+
+spawn /usr/bin/ssh yujinqiu@relay01.baidu.com
+expect {
+    "PASSCODE:" { interact timeout 3 return }
+    "Password:" { interact timeout 3 return }
+}
+send "ssh -tt yujinqiu@tc-iknow-cc00.tc\r\r\n"
+interact
