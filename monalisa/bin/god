@@ -2,7 +2,9 @@
 set timeout -1
 
 proc do_first_login {} {
-        interact timeout 3 return 
+        interact -nobuffer -re "\r" {
+            return 
+        }
         expect "$"
         send "ssh  yujinqiu@tc-iknow-cc00.tc\r"
         expect "$"
