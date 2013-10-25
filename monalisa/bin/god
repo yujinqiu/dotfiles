@@ -1,22 +1,36 @@
 #!/usr/bin/expect
 set timeout -1
 
-spawn /usr/bin/ssh yujinqiu@relay01.baidu.com
-expect {
-    "PASSCODE:" { interact timeout 3 return }
-    "Password:" { interact timeout 3 return }
-    "$" {
-        send "ssh -tt yujinqiu@tc-iknow-cc00.tc\r"
+proc do_first_login {} {
+        interact timeout 3 return 
+        expect "$"
+        send "ssh  yujinqiu@tc-iknow-cc00.tc\r"
         expect "$"
         send "sudo -iu root\r"
         expect "#"
         send "su - arch\r"
+        send "clear\r"
         interact
+}
+
+proc do_duplicate_login {} {
+        send "ssh  yujinqiu@tc-iknow-cc00.tc\r"
+        send "sudo -iu root\r"
+        expect "#"
+        send "su - arch\r"
+        send "clear\r"
+        interact
+}
+
+spawn /usr/bin/ssh yujinqiu@relay01.baidu.com
+expect {
+    "PASSCODE:$" { 
+        do_first_login
+    }
+    "Password" {
+        do_first_login
+    }
+    "Last login" {
+        do_duplicate_login
     }
 }
-send "ssh -tt yujinqiu@tc-iknow-cc00.tc\r"
-expect "$"
-send "sudo -iu root\r"
-expect "#"
-send "su - arch\r"
-interact
