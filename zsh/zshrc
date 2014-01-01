@@ -40,9 +40,7 @@ plugins=(git python pip compleat  extract brew github)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/hit9/.rvm/bin
-
-#export TERM=screen-256color
+export PATH=$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 
 # alias for reload zshrc
@@ -62,8 +60,6 @@ k!(){ack "$*" --color | less -R}
 sizeof(){du -h "$*"}
 alias json='python -mjson.tool | pygmentize -l json'
 alias todo='~/.todo'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
 export PYTHONPATH

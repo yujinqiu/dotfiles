@@ -34,6 +34,14 @@ vim
   ```
   $ make vim
   ```
+  该部分vim配置包含vim bundle（vundle）和solarised color scheme。
+  
+  安装vundle的方式如下：
+  
+  打开一个vim窗口，在命令模式下输入
+  
+     :BundleList    //会显示你vimrc里面填写的所有插件名称
+     :BundleInstall  //会自动下载安装或更新你的插件。
 
 tmux
 ----
