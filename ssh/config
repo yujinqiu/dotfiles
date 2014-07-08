@@ -2,3 +2,5 @@
 host *
 ControlMaster auto
 ControlPath ~/.ssh/master-%r@%h:%p
+ControlPersist 24h
+StrictHostKeyChecking no
