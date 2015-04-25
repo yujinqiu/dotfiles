@@ -9,14 +9,12 @@ ifdef force
 	endif
 endif
 
-
 vim:
 	cd vim/vundle ; git checkout master ; git pull;
 	mkdir -p ~/.vim/bundle/ 
 	ln $(LNSOPT) $(CURDIR)/vim/vimrc ~/.vimrc
 	ln $(LNSOPT) $(CURDIR)/vim/vundle ~/.vim/bundle/vundle
 	vim -c "BundleInstall"
-
 
 tmux:
 	ln $(LNSOPT) $(CURDIR)/tmux/tmux.conf ~/.tmux.conf
@@ -28,10 +26,13 @@ zsh:
 	ln $(LNSOPT) $(CURDIR)/zsh/zshrc ~/.zshrc
 	ln $(LNSOPT) $(CURDIR)/zsh/oh-my-zsh ~/.oh-my-zsh
 
-
 git:
 	ln $(LNSOPT) $(CURDIR)/git/gitconfig ~/.gitconfig
+
 ssh:
 	mkdir -p ~/.ssh/
 	ln $(LNSOPT) $(CURDIR)/ssh/config ~/.ssh/config
 	chmod 0600 ~/.ssh/config
+
+hammerspoon:
+	ln $(LNSOPT) $(CURDIR)/hammerspoon ~/.hammerspoon

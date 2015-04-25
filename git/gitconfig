@@ -1,10 +1,11 @@
 [user]
-	name = saiYu
+	name =  Jinqiu Yu
 	email = yujinqiuustb@gmail.com
 [merge]
     tool = vimdiff
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+    conflictstyle = diff3
 [giggle]
 	main-window-maximized = false
 	main-window-geometry = 296x71+1+58
@@ -20,9 +21,23 @@
 	tool = vimdiff
 [core]
 	editor = /usr/bin/vim
+	excludesfile = /Users/knight/.gitignore_global
 [alias]
 	lgg = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\"
 [credential]
 	helper = osxkeychain
 [push]
 	default = simple
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

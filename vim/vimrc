@@ -159,7 +159,7 @@ set nowrap
 set guioptions-=T           " gvim隐藏工具栏
 set guioptions-=m           " gvim隐藏菜单栏
 "设置gvim的字体
-set guifont=Inconsolata-g:h18
+set guifont=Monaco\ for\ Powerline:h14.5
 
 "--------------------------------------------------------------------1}}}
 
@@ -207,13 +207,13 @@ set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 "根据文件类型设定缩进,覆盖掉默认的~,来自humiaozuzu
-autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
-autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
+autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=4 shiftwidth=2 softtabstop=2 textwidth=0
+autocmd FileType sass,scss,css setlocal tabstop=4 shiftwidth=4 softtabstop=2 textwidth=79
 "-------------------------------------------------------------------1}}}
 
 
@@ -263,7 +263,7 @@ set background=dark
 "     colorscheme solarized
 " endif
 "使vim在终端保持透明
-colorscheme badwolf
+colorscheme molokai
 hi Normal ctermbg=NONE
 "-----------------------------------------------2}}}
 
@@ -290,6 +290,7 @@ let NERDTreeIgnore = ['\.py[co]$']
 " ----------------------------------  Powerline ----------{{{2
 "状态栏
 set laststatus=2
+set fillchars+=stl:\ ,stlnc:\ 
 let g:Powerline_symbols='fancy'
 "----------------------------------------------- 2}}}
 
@@ -412,3 +413,4 @@ autocmd BufWrite *.c :WS
 autocmd BufWrite *.h :WS
 ":w!! to sudo write file
 cmap w!! w !sudo tee >/dev/null %
+

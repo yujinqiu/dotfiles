@@ -65,3 +65,7 @@ zsh
 ---
 
     $ make zsh
+    
+powerline
+---
+从@乐乐同学了解到powerline 的强大功能.

@@ -35,18 +35,16 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)a
 
 
-plugins=(git python pip compleat  extract brew github)
+plugins=(git python pip compleat  extract brew github autojump zsh-functional)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/knight/code/go/bin/
 
 
 # alias for reload zshrc
 alias reload!='. ~/.zshrc'
-# alias for quick server
-alias pyserver='python -m SimpleHTTPServer'
 
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
@@ -63,3 +61,15 @@ alias todo='~/.todo'
 
 PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
 export PYTHONPATH
+#. ~/dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
+export GOPATH="/Users/knight/code/go"
+export GOROOT="/usr/local/opt/go/libexec/"
+
+export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/openssl/1.0.1i/lib/"
+
+export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim'
+export PLAN9=/usr/bin/plan9port
+export PATH=$PATH:$PLAN9/bin
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
+
+source /Users/knight/.iterm2_shell_integration.zsh
