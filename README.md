@@ -68,3 +68,5 @@ powerline
 hammerspoon
 ---
 mac  os x 窗体快速定位
+
+    $ make hammerspoon
