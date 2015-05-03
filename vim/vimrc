@@ -11,86 +11,86 @@ let g:vundle_default_git_proto="git"
 
 "---------------------------- 配色 -------------------------{{{2
 "solarized 配色
-Bundle "altercation/vim-colors-solarized"
+Plugin 'altercation/vim-colors-solarized'
 "molokai
-Bundle "tomasr/molokai"
+Plugin 'tomasr/molokai'
 
-Bundle "sjl/badwolf"
+Plugin 'sjl/badwolf'
 
-Bundle "Lokaltog/vim-powerline"
+Plugin 'Lokaltog/vim-powerline'
 
 "-----------------------------------------------------------2}}}
 "自动补全插件
-Bundle 'neocomplcache'
+Plugin 'neocomplcache'
 "jsbeautify
-Bundle 'jsbeautify'
+Plugin 'jsbeautify'
 "autoclose:自动关闭括号,[],{}等，自动光标置中
-Bundle "jiangmiao/auto-pairs"
+Plugin 'jiangmiao/auto-pairs'
 " -------------- snipmate 插件:tab 补全 --- {{{2
 "snipmate的依赖
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
 "snipmate
-Bundle "garbas/vim-snipmate"
+Plugin 'garbas/vim-snipmate'
 "-----------------------------------2}}}
 "窗口浏览器
-Bundle "scrooloose/nerdtree"
+Plugin 'scrooloose/nerdtree'
 "快速查找文件插件CtrlP
-Bundle "kien/ctrlp.vim"
+Plugin 'kien/ctrlp.vim'
 
 "Jquery
-Bundle "jQuery"
+Plugin 'jQuery'
 
-Bundle "pep8"
+"Plugin 'pep8'
 
 "好插件啊：自动在类似==两边添加空格
-Bundle "auto"
+"Plugin 'auto'
 
-Bundle "taglist.vim"
+Plugin 'taglist.vim'
 
 "Oh,一个注释插件,\\注释一行或撤销注释一行
-Bundle "tpope/vim-commentary"
+Plugin 'tpope/vim-commentary'
 
 "持久化的撤销操作插件, http://sjl.bitbucket.org/gundo.vim/ :GundoToggle
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 
 "用过vimoperator吗？那里的f键快速跳转叫你印象深刻吧
-Bundle "Lokaltog/vim-easymotion"
+Plugin 'Lokaltog/vim-easymotion'
 
 "vim git 插件
-Bundle "tpope/vim-fugitive"
+Plugin 'tpope/vim-fugitive'
 
 "show 添加的行和删除的行
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 "for js
-Bundle "pangloss/vim-javascript"
+Plugin 'pangloss/vim-javascript'
 
 "-------------- for Python programmers ------------{{{2
 "Python.vim
-Bundle "python.vim--Vasiliev"
+Plugin 'python.vim--Vasiliev'
 "Python mode
-Bundle "klen/python-mode"
+Plugin 'klen/python-mode'
 "pep8 indent.很久以前我就在尋思這個插件，沒有人實現那.現在有啦！好東西哦
-Bundle "hynek/vim-python-pep8-indent"
+Plugin 'hynek/vim-python-pep8-indent'
 "jinja2 syntax
-Bundle "Glench/Vim-Jinja2-Syntax"
+Plugin 'Glench/Vim-Jinja2-Syntax'
 "--------------------------------------------------2}}}
 "----------- for coffee-script---------------------{{{2
-Bundle "vim-coffee-script"
+Plugin 'vim-coffee-script'
 "---------------------------------------------------2}}}
 "less syntax
-Bundle "groenewege/vim-less"
+Plugin 'groenewege/vim-less'
 
 "toml!
-Bundle "cespare/vim-toml"
+Plugin 'cespare/vim-toml'
 "haml,sass
-Bundle "tpope/vim-haml"
+Plugin 'tpope/vim-haml'
 ""
-Bundle "terryma/vim-multiple-cursors"
+Plugin 'terryma/vim-multiple-cursors'
 
-Bundle "kshenoy/vim-signature"
+Plugin 'kshenoy/vim-signature'
 
 "-------------------------------------------------------------1}}}
 
@@ -310,7 +310,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 "ctags will be installed to /usr/local/bin/ctags
 
 "use /usr/local/bin/ctags
-let Tlist_Ctags_Cmd="/usr/bin/ctags"
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 " 只显示当前文件的tag
 let Tlist_Show_One_File = 1
 "taglist是最后一个的时候退出vim
