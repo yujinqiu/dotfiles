@@ -14,7 +14,7 @@ vim:
 	mkdir -p ~/.vim/bundle/ 
 	ln $(LNSOPT) $(CURDIR)/vim/vimrc ~/.vimrc
 	ln $(LNSOPT) $(CURDIR)/vim/vundle ~/.vim/bundle/vundle
-	vim -c "BundleInstall"
+	vim -c "PluginInstall"
 
 tmux:
 	ln $(LNSOPT) $(CURDIR)/tmux/tmux.conf ~/.tmux.conf
