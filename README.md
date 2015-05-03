@@ -21,12 +21,8 @@ vim
 
 2. mac安装ctags:
 
-  - Download ctags from http://ctags.sourceforge.net/
-  - extract it, and 
-
     ```
-    ./configure
-    sudo make install
+    brew install ctags
     ```
 
 3. 然后:
@@ -40,14 +36,13 @@ vim
   
   打开一个vim窗口，在命令模式下输入
   
-     :BundleList    //会显示你vimrc里面填写的所有插件名称
-     :BundleInstall  //会自动下载安装或更新你的插件。
+     :PluginList    //会显示你vimrc里面填写的所有插件名称  
+     :PluginInstall  //会自动下载安装或更新你的插件。  
 
 tmux
 ----
 
     $ make tmux
-
 
 iterm2
 ------
@@ -69,3 +64,7 @@ zsh
 powerline
 ---
 从@乐乐同学了解到powerline 的强大功能.
+
+hammerspoon
+---
+mac  os x 窗体快速定位
