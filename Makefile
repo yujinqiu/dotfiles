@@ -13,7 +13,7 @@ vim:
 	cd vim/vundle ; git checkout master ; git pull;
 	mkdir -p ~/.vim/bundle/ 
 	ln $(LNSOPT) $(CURDIR)/vim/vimrc ~/.vimrc
-	ln $(LNSOPT) $(CURDIR)/vim/vundle ~/.vim/bundle/vundle
+	ln $(LNSOPT) $(CURDIR)/vim/vundle ~/.vim/bundle/Vundle.vim
 	vim -c "PluginInstall"
 
 tmux:

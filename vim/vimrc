@@ -3,7 +3,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 "se git:// as default protocol. I hate that "hung up .."
@@ -11,7 +11,7 @@ let g:vundle_default_git_proto="git"
 
 "---------------------------- 配色 -------------------------{{{2
 "solarized 配色
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 "molokai
 Plugin 'tomasr/molokai'
 
@@ -19,17 +19,22 @@ Plugin 'sjl/badwolf'
 
 Plugin 'Lokaltog/vim-powerline'
 
+Plugin 'fatih/vim-go'
+
+Plugin 'Valloric/YouCompleteMe'
+
 "-----------------------------------------------------------2}}}
 "自动补全插件
 Plugin 'neocomplcache'
 "jsbeautify
-Plugin 'jsbeautify'
+"Plugin 'jsbeautify'
 "autoclose:自动关闭括号,[],{}等，自动光标置中
 Plugin 'jiangmiao/auto-pairs'
 " -------------- snipmate 插件:tab 补全 --- {{{2
 "snipmate的依赖
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 "snipmate
 Plugin 'garbas/vim-snipmate'
@@ -40,14 +45,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 
 "Jquery
-Plugin 'jQuery'
+"Plugin 'jQuery'
 
 "Plugin 'pep8'
 
 "好插件啊：自动在类似==两边添加空格
 "Plugin 'auto'
 
-Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar'
 
 "Oh,一个注释插件,\\注释一行或撤销注释一行
 Plugin 'tpope/vim-commentary'
@@ -65,7 +70,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 "for js
-Plugin 'pangloss/vim-javascript'
+"Plugin 'pangloss/vim-javascript'
 
 "-------------- for Python programmers ------------{{{2
 "Python.vim
@@ -75,7 +80,7 @@ Plugin 'klen/python-mode'
 "pep8 indent.很久以前我就在尋思這個插件，沒有人實現那.現在有啦！好東西哦
 Plugin 'hynek/vim-python-pep8-indent'
 "jinja2 syntax
-Plugin 'Glench/Vim-Jinja2-Syntax'
+"Plugin 'Glench/Vim-Jinja2-Syntax'
 "--------------------------------------------------2}}}
 "----------- for coffee-script---------------------{{{2
 Plugin 'vim-coffee-script'
@@ -86,7 +91,7 @@ Plugin 'groenewege/vim-less'
 "toml!
 Plugin 'cespare/vim-toml'
 "haml,sass
-Plugin 'tpope/vim-haml'
+"Plugin 'tpope/vim-haml'
 ""
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -333,6 +338,58 @@ let g:pymode_rope = 0
 " Disable pylint checking every save
 let g:pymode_lint_write = 0
 
+" YCM settings
+let g:ycm_key_list_select_completion = ['', '']
+let g:ycm_key_list_previous_completion = ['']
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+" UltiSnips setting
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Vim-go setting
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Go tags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 "-------------------------------------插件配置end-----------------------------1}}}
 
@@ -400,7 +457,7 @@ noremap wj <c-w><down>
 "打开/关闭Nerdtree
 :command NT :NERDTreeToggle
 "打开/关闭tagbar
-:command TG :TlistToggle
+:command TG :TagbarToggle
 "打开YankRing
 :command YR :YRShow
 "打开关闭Gundo
