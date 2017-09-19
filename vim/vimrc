@@ -1,6 +1,7 @@
 " -------- Bundles  ---------------------------------------{{{1
 "首先，加载vundle!
 set nocompatible               " be iMproved
+set clipboard=unnamed
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -21,7 +22,7 @@ Plugin 'Lokaltog/vim-powerline'
 
 Plugin 'fatih/vim-go'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 "-----------------------------------------------------------2}}}
 "自动补全插件
@@ -34,8 +35,8 @@ Plugin 'jiangmiao/auto-pairs'
 "snipmate的依赖
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 "snipmate
 Plugin 'garbas/vim-snipmate'
 "-----------------------------------2}}}
@@ -96,6 +97,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'kshenoy/vim-signature'
+Plugin 'editorconfig/editorconfig-vim'
+
+Plugin 'w0rp/ale'
 
 "-------------------------------------------------------------1}}}
 
@@ -125,10 +129,6 @@ syntax on
 set showcmd
 "显示当前模式
 set showmode
-"关闭报警声音
-set noeb
-"开启鼠标定位
-set mouse=a
 "关闭报警声音
 set noeb
 "外部修改后自动更新这个文件
@@ -193,6 +193,7 @@ set cindent
 set smartindent
 "For Python Programmers
 autocmd FileType python set textwidth=79 " PEP-8 Friendly
+set colorcolumn=81
 "----------------------------------------------------------------------1}}}
 
 "------------------ tab键 --------------------------------------------{{{1
@@ -219,6 +220,7 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=79
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=4 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=4 shiftwidth=4 softtabstop=2 textwidth=79
+autocmd FileType yaml,yml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
 "-------------------------------------------------------------------1}}}
 
 
@@ -444,9 +446,9 @@ noremap wj <c-w><down>
 "--------------- 系统剪切板 ---------------
 
 "ctrl-c复制到系统剪切板
-map <C-c> "+y
+"map <C-c> "+y
 "ctrl-v粘贴到系统粘贴板
-map <C-v> "+p
+"map <C-v> "+p
 "----------------------------------------------------------------------1}}}
 
 "--------------  用户自定义命令 --------------------------------------{{{1
@@ -471,3 +473,30 @@ autocmd BufWrite *.h :WS
 ":w!! to sudo write file
 cmap w!! w !sudo tee >/dev/null %
 
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }

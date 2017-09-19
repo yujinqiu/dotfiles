@@ -2,5 +2,72 @@
 host *
 ControlMaster auto
 ControlPath ~/.ssh/master-%r@%h:%p
-ControlPersist 24h
+ControlPersist 2h
 StrictHostKeyChecking no
+
+ForwardAgent yes
+
+host meiqia-gw
+    user yujinqiu
+    hostname 54.223.232.244
+
+host meiqia-sa
+    user meiqia-sa
+    hostname 54.223.232.244
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+host meiqia-dev-gw
+    user meiqia-sa
+#hostname 54.223.20.55
+    hostname 10.102.1.100
+
+host meiqia-jump0
+    user mechat
+    port 64432
+#hostname 10.100.2.218
+    hostname 54.223.132.87
+
+host vps
+    user root
+    hostname  108.61.168.133 
+    PKCS11Provider /usr/local/lib/kr-pkcs11.so
+    ProxyCommand /usr/local/bin/krssh %h %p
+    IdentityFile ~/.ssh/id_kryptonite
+
+host doras
+    user cow
+    hostname 47.90.0.179
+    port 1344
+
+Host *.dcos.meiqia.internal
+    User ec2-user
+
+Host meiqia0
+    User meiqia
+    HostName 10.100.5.214
+    ProxyCommand ssh -A meiqia-sa nc -w 180 %h %p
+
+Host meiqia1
+    User meiqia
+    HostName 10.100.6.212
+    ProxyCommand ssh -A meiqia-sa nc -w 180 %h %p
+
+Host algalon
+    User meiqia-sa
+    HostName algalon.meiqia.com
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host redmine
+    User  meiqia-sa
+    HostName 10.100.5.175
+    IdentityFile /Users/knight/.ssh/redmine.pem
+
+# Added by Kryptonite
+#Host *
+#PKCS11Provider /usr/local/lib/kr-pkcs11.so
+#ProxyCommand /usr/local/bin/krssh %h %p
+#IdentityFile ~/.ssh/id_kryptonite
+#IdentityFile ~/.ssh/id_ed25519
+#IdentityFile ~/.ssh/id_rsa
+#IdentityFile ~/.ssh/id_ecdsa
+#IdentityFile ~/.ssh/id_dsa

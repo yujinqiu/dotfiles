@@ -16,7 +16,7 @@ ZSH_THEME="robbyrussell"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -40,7 +40,7 @@ plugins=(git python pip compleat  extract brew github autojump zsh-functional)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/knight/code/go/bin/
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/didi/code/go/bin/
 
 
 # alias for reload zshrc
@@ -57,19 +57,21 @@ k(){ack "$*" --color}
 k!(){ack "$*" --color | less -R}
 sizeof(){du -h "$*"}
 alias json='python -mjson.tool | pygmentize -l json'
+alias xml='xmllint --format -'
 alias todo='~/.todo'
 
 PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
 export PYTHONPATH
 #. ~/dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
+#export GOROOT="/usr/local/opt/go/libexec/"
 export GOPATH="/Users/knight/code/go"
-export GOROOT="/usr/local/opt/go/libexec/"
 
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/openssl/1.0.1i/lib/"
 
 export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim'
-export PLAN9=/usr/bin/plan9port
+export PLAN9=/usr/local/plan9
 export PATH=$PATH:$PLAN9/bin
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
 
-source /Users/knight/.iterm2_shell_integration.zsh
+ssh-add  /Users/knight/.ssh/meiqia-sa.pem
+eval "$(direnv hook $SHELL)"

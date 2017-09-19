@@ -41,3 +41,8 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[credential]
+	helper = cache --timeout 1
+[commit]
+    template=/Users/knight/dotfiles/git/git-commit-template
+

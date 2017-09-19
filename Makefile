@@ -1,5 +1,5 @@
 # vim:set noet: 
-.PHONY : vim tmux iterm2 zsh git ssh
+.PHONY : vim tmux iterm2 zsh git ssh karabiner
 
 LNSOPT=-sv
 
@@ -36,3 +36,6 @@ ssh:
 
 hammerspoon:
 	ln $(LNSOPT) $(CURDIR)/hammerspoon ~/.hammerspoon
+
+karabiner:
+	ln  $(LNSOPT) $(CURDIR)/karabiner ~/.config/karabiner
