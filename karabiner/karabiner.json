@@ -105,7 +105,7 @@
                         ]
                     },
                     {
-                        "description": "Change caps_lock key to heyper (command+control+option+shift). (Use shift+caps_lock as caps_lock)",
+                        "description": "Change caps_lock key to hyper (command+control+option+shift). (Use shift+caps_lock as caps_lock)",
                         "manipulators": [
                             {
                                 "from": {
