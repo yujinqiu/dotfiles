@@ -116,7 +116,9 @@ set go=
 syntax enable
 "se nu  "显示行号
 "终端模式:xterm-256color,这个终端模式支持功能键Home,End等
-set term=xterm-256color
+"set term=xterm-256color
+"xterm-256color 在退出的时候会清空 screen, 同时无法选中复制
+set term=linux
 "终端下名字由vim设置
 set title
 "开启256 color
