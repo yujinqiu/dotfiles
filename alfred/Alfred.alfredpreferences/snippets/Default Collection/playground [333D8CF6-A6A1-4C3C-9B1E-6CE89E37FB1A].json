@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "diskutil partitionDisk $(hdiutil attach -nomount ram:\/\/2048000) 1 GPTFormat 'Case-sensitive APFS' 'playground' '100%'",
+    "uid" : "333D8CF6-A6A1-4C3C-9B1E-6CE89E37FB1A",
+    "name" : "playground",
+    "keyword" : "playground"
+  }
+}

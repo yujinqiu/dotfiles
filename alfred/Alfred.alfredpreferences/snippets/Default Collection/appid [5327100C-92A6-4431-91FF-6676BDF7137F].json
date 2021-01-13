@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "osascript -e 'id of app \"terminal\"'",
+    "uid" : "5327100C-92A6-4431-91FF-6676BDF7137F",
+    "name" : "appid",
+    "keyword" : "appid"
+  }
+}

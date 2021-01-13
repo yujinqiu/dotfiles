@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "curl -H \"Max-Days: 1\"  https:\/\/transfer.chengfayun.net --upload-file .\/{cursor}   |  tee ",
+    "uid" : "EDC715F7-9038-4F29-8F36-604D923002DE",
+    "name" : "transfer",
+    "keyword" : "transfer"
+  }
+}

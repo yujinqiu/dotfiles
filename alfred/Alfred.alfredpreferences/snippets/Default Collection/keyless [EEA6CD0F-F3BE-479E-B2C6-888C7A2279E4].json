@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no",
+    "uid" : "EEA6CD0F-F3BE-479E-B2C6-888C7A2279E4",
+    "name" : "keyless",
+    "keyword" : "keyless"
+  }
+}

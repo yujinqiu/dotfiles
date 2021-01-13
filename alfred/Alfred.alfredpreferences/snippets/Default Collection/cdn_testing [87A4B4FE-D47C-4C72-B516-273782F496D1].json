@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "curl -sv  --resolve domain:443:cdnip  https:\/\/domain\/uri ",
+    "uid" : "87A4B4FE-D47C-4C72-B516-273782F496D1",
+    "name" : "cdn_testing",
+    "keyword" : "cdn"
+  }
+}

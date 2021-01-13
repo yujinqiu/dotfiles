@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "aria2c -x 16 -s 16 -k 4M  ",
+    "uid" : "A432FAE8-1D66-4B78-B55E-FBA0C1F676EF",
+    "name" : "download",
+    "keyword" : "download"
+  }
+}

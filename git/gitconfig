@@ -1,6 +1,6 @@
 [user]
-	name =  Jinqiu Yu
-	email = yujinqiuustb@gmail.com
+	name = yujinqiu
+	email = yujinqiu@gmail.com
 [merge]
     tool = vimdiff
 	# Include summaries of merged commits in newly created merge commit messages
@@ -20,12 +20,18 @@
 [diff]
 	tool = vimdiff
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/bin/vim
 	excludesfile = /Users/knight/.gitignore_global
+	pager = cat
+    ignorecase = false
 [alias]
-	lgg = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\"
-[credential]
-	helper = osxkeychain
+	lgg = log  --graph --pretty=format:\"%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\"
+    amend = commit --amend
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD'  ]]; then export $VAR='$NEW'; fi\" $@;  }; f "
+    lgr = log --reverse
+
+#[credential]
+#	helper = osxkeychain
 [push]
 	default = simple
 [filter "media"]
@@ -41,8 +47,44 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[credential]
-	helper = cache --timeout 1
+#[credential]
+#	helper = cache --timeout 1
 [commit]
     template=/Users/knight/dotfiles/git/git-commit-template
+	gpgSign = false
 
+
+#[url "git@yalarmorghulis:yalarmorghulis"]
+#    insteadOf = https://github.com/yalarmorghulis
+#    insteadOf = git@github.com:yalarmorghulis
+
+#[url "git@stephyly:stephyly"]
+#    insteadOf = https://github.com/stephyly
+#    insteadOf = git@github.com:stephyly
+
+#[url "git@yjaqen:yjaqen"]
+#    insteadOf = https://github.com/yjaqen
+#    insteadOf = git@github.com:yjaqen
+
+#[url "git@yujinqiu:yujinqiu"]
+#    insteadOf = https://github.com/yujinqiu
+#    insteadOf = git@github.com:yujinqiu
+
+#[url "git@github.com:"]
+#    insteadOf = https://github.com/
+
+[credential]
+	helper = osxkeychain
+#[gpg]
+#	program = /usr/local/bin/krgpg
+[tag]
+	forceSignAnnotated = true
+[protocol]
+	version = 2
+[pull]
+	rebase = true
+[user]
+	name = yujinqiu
+	email = yujinqiu@chengfayun.com
+[init]
+	defaultBranch = main

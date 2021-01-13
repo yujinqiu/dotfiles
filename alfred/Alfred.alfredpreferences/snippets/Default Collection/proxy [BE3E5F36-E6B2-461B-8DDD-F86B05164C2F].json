@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "export https_proxy=http:\/\/101.251.198.78:10010\nexport http_proxy=http:\/\/101.251.198.78:10010\nexport no_proxy=10.0.0.0\/8\n",
+    "uid" : "BE3E5F36-E6B2-461B-8DDD-F86B05164C2F",
+    "name" : "proxy",
+    "keyword" : "proxy"
+  }
+}

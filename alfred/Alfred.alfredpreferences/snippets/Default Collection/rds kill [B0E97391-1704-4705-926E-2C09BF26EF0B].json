@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "call mysql.rds_kill(",
+    "uid" : "B0E97391-1704-4705-926E-2C09BF26EF0B",
+    "name" : "rds kill",
+    "keyword" : "rds kill"
+  }
+}

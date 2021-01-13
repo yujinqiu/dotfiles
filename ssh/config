@@ -1,11 +1,9 @@
-
 host *
-ControlMaster auto
-ControlPath ~/.ssh/master-%r@%h:%p
-ControlPersist 2h
-StrictHostKeyChecking no
-
-ForwardAgent yes
+#    ControlMaster auto
+#ControlPath ~/.ssh/master-%r@%h:%p
+#    ControlPersist 1d
+    StrictHostKeyChecking no
+    ForwardAgent yes
 
 host meiqia-gw
     user yujinqiu
@@ -16,10 +14,22 @@ host meiqia-sa
     hostname 54.223.232.244
     IdentityFile /Users/knight/.ssh/meiqia-sa.pem
 
+host yu
+    user yu
+    hostname 10.211.55.13
+    IdentityAgent ~/.sekey/ssh-agent.ssh
+#IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+#
+host yu
+    user yu
+    hostname 10.211.55.3
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+#IdentityAgent ~/.sekey/ssh-agent.ssh
+
 host meiqia-dev-gw
     user meiqia-sa
 #hostname 54.223.20.55
-    hostname 10.102.1.100
+    hostname waterbear.meiqia.com
 
 host meiqia-jump0
     user mechat
@@ -27,20 +37,21 @@ host meiqia-jump0
 #hostname 10.100.2.218
     hostname 54.223.132.87
 
+host 110
+    user meiqia-sa
+    hostname 52.80.36.162
+    IdentityFile /Users/knight/.ssh/jumpserver.pem
+
 host vps
     user root
     hostname  108.61.168.133 
-    PKCS11Provider /usr/local/lib/kr-pkcs11.so
+    IdentityAgent ~/.kr/krd-agent.sock
     ProxyCommand /usr/local/bin/krssh %h %p
-    IdentityFile ~/.ssh/id_kryptonite
 
 host doras
     user cow
     hostname 47.90.0.179
     port 1344
-
-Host *.dcos.meiqia.internal
-    User ec2-user
 
 Host meiqia0
     User meiqia
@@ -52,21 +63,154 @@ Host meiqia1
     HostName 10.100.6.212
     ProxyCommand ssh -A meiqia-sa nc -w 180 %h %p
 
-Host algalon
+Host cap-ny
     User meiqia-sa
-    HostName algalon.meiqia.com
+    HostName 148.153.8.182
+#IdentityAgent ~/.kr/krd-agent.sock
+#ProxyCommand /usr/local/bin/krssh %h %p
     IdentityFile /Users/knight/.ssh/meiqia-sa.pem
 
-Host redmine
-    User  meiqia-sa
-    HostName 10.100.5.175
-    IdentityFile /Users/knight/.ssh/redmine.pem
-
-# Added by Kryptonite
-#Host *
-#PKCS11Provider /usr/local/lib/kr-pkcs11.so
+Host waterbear.meiqia.com
+#IdentityAgent ~/.kr/krd-agent.sock
 #ProxyCommand /usr/local/bin/krssh %h %p
-#IdentityFile ~/.ssh/id_kryptonite
+    IdentityAgent ~/.sekey/ssh-agent.ssh
+#IdentityFile /Users/knight/.ssh/waterbear.pem
+#
+Host waterbear.chengfayun.net
+#IdentityAgent ~/.kr/krd-agent.sock
+#ProxyCommand /usr/local/bin/krssh %h %p
+    IdentityAgent ~/.sekey/ssh-agent.ssh
+#IdentityFile /Users/knight/.ssh/waterbear.pem
+#
+Host cap-bj
+    User  meiqia-sa
+    HostName 101.251.197.134
+    IdentityFile /Users/knight/.ssh/cap_ssh
+
+Host ws-bj1
+    User  meiqia-sa
+    HostName 114.112.75.194
+    IdentityFile /Users/knight/.ssh/cap_ssh
+
+Host ws-bj2
+    User  meiqia-sa
+    HostName 114.112.75.198
+    IdentityFile /Users/knight/.ssh/cap_ssh
+#IdentityAgent ~/.kr/krd-agent.sock
+#ProxyCommand /usr/local/bin/krssh %h %p
+#
+Host cap-cf
+    User  meiqia-sa
+    HostName 101.251.248.186
+    IdentityFile /Users/knight/.ssh/cap_ssh
+
+Host cap-ny
+    User  meiqia-sa
+    HostName 148.153.8.118
+    IdentityFile /Users/knight/.ssh/cap_ssh
+
+Host ws-bj
+    User root
+    HostName 114.112.71.238
+
+Host ws-sig
+    User root
+    HostName 164.52.72.82
+
+Host morningside
+    User meiqia-sa
+    HostName 52.81.8.154
+    IdentityAgent ~/.kr/krd-agent.sock
+    ProxyCommand /usr/local/bin/krssh %h %p
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host tableau
+    User meiqia-sa
+    HostName 52.81.154.201
+    IdentityAgent ~/.kr/krd-agent.sock
+    ProxyCommand /usr/local/bin/krssh %h %p
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host nas
+    User meiqia-sa
+    HostName 10.88.0.3
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host printer
+    User meiqia-sa
+    HostName 10.115.5.202
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host pintest.krypt.co
+    HostName pintest.krypt.co
+    ProxyCommand /usr/local/bin/krssh %h %p
+    IdentityFile /Users/knight/.ssh/meiqia-sa.pem
+
+Host aliyun
+    User root
+    HostName 47.92.122.143
+    IdentityFile /Users/knight/.ssh/root-aliyun-zhangjiakou.pem
+
+Host chengfayun
+    User meiqia-sa
+    HostName 52.83.227.138
+    IdentityFile /Users/knight/.ssh/chengfayun-devops.pem
+
+Host pingcap
+    User root
+    HostName 117.50.60.144
+    IdentityFile /Users/knight/.ssh/chengfayun-devops.pem
+
+Host chengfayun-oversea
+    User meiqia-sa
+    HostName 3.1.0.110
+    IdentityFile /Users/knight/.ssh/chengfayun-oversea-meiqia-sa.pem
+
+Host yalarmorghulis
+    User git
+    HostName  github.com
+    IdentityFile /Users/knight/.ssh/yalarmorghulis.pem
+
+Host yujinqiu
+    User git
+    HostName  github.com
+    IdentityFile /Users/knight/.ssh/id_rsa
+
+Host yjaqen
+    User git
+    HostName  github.com
+    IdentityFile /Users/knight/.ssh/yjaqen.pem
+
+Host stephyly
+    User git
+    HostName  github.com
+    IdentityFile /Users/knight/.ssh/yalarmorghulis.pem
+    
+Host gcp
+    User litechat
+    HostName  35.247.179.186
+    IdentityFile /Users/knight/.ssh/yalarmorghulis.pem
+
+#Host yujinqiu
+#    User git
+#    HostName  github.com
+#    IdentityFile /Users/knight/.ssh/id_rsa
+
+Host github.com
+    User git
+    HostName  github.com
+    IdentityFile /Users/knight/.ssh/id_rsa
+
+
+Host 127.0.0.1
+    Port 8222
+
+
+# Added by Krypton
+#Host *
+#IdentityAgent ~/.kr/krd-agent.sock
+#ProxyCommand /usr/local/bin/krssh %h %p
+#IdentityFile ~/.ssh/id_krypton
 #IdentityFile ~/.ssh/id_ed25519
 #IdentityFile ~/.ssh/id_rsa
 #IdentityFile ~/.ssh/id_ecdsa

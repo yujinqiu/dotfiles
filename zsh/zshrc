@@ -35,12 +35,12 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)a
 
 
-plugins=(git python pip compleat  extract brew github autojump zsh-functional)
+plugins=(git pip compleat  extract brew github autojump zsh-functional)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.monalisa/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/Users/didi/code/go/bin/
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Users/knight/.monalisa/bin:/usr/local/opt/curl/bin:/usr/local/plan9/bin:/usr/local/share/npm/bin:/Users/knight/code/go/bin:/usr/local/bin/
 
 
 # alias for reload zshrc
@@ -51,7 +51,6 @@ export LANG=en_US.UTF-8
 
 export EDITOR=vim
 
-export PATH=$PATH:$(brew --prefix)/share/npm/bin
 
 k(){ack "$*" --color}
 k!(){ack "$*" --color | less -R}
@@ -59,19 +58,107 @@ sizeof(){du -h "$*"}
 alias json='python -mjson.tool | pygmentize -l json'
 alias xml='xmllint --format -'
 alias todo='~/.todo'
+alias md5sum='md5 '
 
-PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
-export PYTHONPATH
+#PYTHONPATH="/usr/local/lib/python2.7/site-packages/:$PYTHONPATH"
+#export PYTHONPATH
 #. ~/dotfiles/powerline/powerline/bindings/zsh/powerline.zsh
-#export GOROOT="/usr/local/opt/go/libexec/"
 export GOPATH="/Users/knight/code/go"
 
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/openssl/1.0.1i/lib/"
 
 export AUTOJUMP_AUTOCOMPLETE_CMDS='cp vim'
-export PLAN9=/usr/local/plan9
-export PATH=$PATH:$PLAN9/bin
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
 
-ssh-add  /Users/knight/.ssh/meiqia-sa.pem
-eval "$(direnv hook $SHELL)"
+#ssh-add /Users/knight/.ssh/meiqia-sa.pem
+#ssh-add /Users/knight/.ssh/yalarmorghulis.pem
+#ssh-add /Users/knight/.ssh/yjaqen.pem
+#ssh-add /Users/knight/.ssh/git-mirror.pem
+#ssh-add /Users/knight/.ssh/aliyun.pem
+#ssh-add /Users/knight/.ssh/id_rsa
+#ssh-add /Users/knight/.ssh/waterbear.pem
+#ssh-add /Users/knight/.ssh/cap_ssh
+
+
+# start gpg-agent
+# export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+#export SSH_AUTH_SOCK=$HOME/.sekey/ssh-agent.ssh
+# gpgconf --launch gpg-agent
+SSLKEYLOGFILE=/Users/knight/sec/tls/sslkeylog.log
+
+
+# Added by Krypton
+export GPG_TTY=$(tty)
+
+export PATH=/Users/knight/.local/bin:$PATH
+#export PATH="/usr/local/opt/go@1.12/bin:$PATH"
+export CPATH=`xcrun --show-sdk-path`/usr/include
+
+
+function powerline_precmd() {
+    PS1="$(/Users/knight/.monalisa/bin/powerline-go -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
+
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+PATH="/Users/knight/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/knight/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/knight/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/knight/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/knight/perl5"; export PERL_MM_OPT;
+
+unset __conda_setup
+# <<< conda init <<<
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/knight/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/knight/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/knight/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/knight/miniconda3/bin:$PATH"
+    fi
+fi
+#conda activate py27
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+eval "$(direnv hook zsh)"
+
+
+#show_virtual_env() {
+#  if [[ -n "$CONDA_DEFAULT_ENV" && -n "$DIRENV_DIR" ]]; then
+#    echo "($(basename $CONDA_DEFAULT_ENV))"
+#  fi
+#}
+#PS1='$(show_virtual_env)'$PS1
+export PLAN9=/usr/local/plan9
+export PATH=$PATH:$PLAN9/bin 
+
+if [[ -r "$(brew --prefix)/opt/mcfly/mcfly.zsh"  ]]; then
+      source "$(brew --prefix)/opt/mcfly/mcfly.zsh"
+fi
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home"
+export PATH=$JAVA_HOME/bin:$PATH
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

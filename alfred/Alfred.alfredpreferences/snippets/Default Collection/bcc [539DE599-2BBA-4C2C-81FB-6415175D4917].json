@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "yum --disablerepo=\"*\" --enablerepo=\"meiqia-repo\" update && yum --disablerepo=\"*\" --enablerepo=\"meiqia-repo\"  install -y bcc-tools",
+    "uid" : "539DE599-2BBA-4C2C-81FB-6415175D4917",
+    "name" : "bcc",
+    "keyword" : "bcc"
+  }
+}

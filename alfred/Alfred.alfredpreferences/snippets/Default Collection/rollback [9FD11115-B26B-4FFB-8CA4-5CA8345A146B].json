@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "kubectl rollout undo  deployment\/<name>",
+    "uid" : "9FD11115-B26B-4FFB-8CA4-5CA8345A146B",
+    "name" : "rollback",
+    "keyword" : "rollback"
+  }
+}

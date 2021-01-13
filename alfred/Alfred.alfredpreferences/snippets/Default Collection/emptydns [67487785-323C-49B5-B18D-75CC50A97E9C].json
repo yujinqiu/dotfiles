@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "sudo  killall -HUP mDNSResponder",
+    "uid" : "67487785-323C-49B5-B18D-75CC50A97E9C",
+    "name" : "emptydns",
+    "keyword" : "emptydns"
+  }
+}

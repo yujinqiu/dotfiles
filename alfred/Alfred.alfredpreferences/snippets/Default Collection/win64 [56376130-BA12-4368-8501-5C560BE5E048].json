@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "wmic os get osarchitecture",
+    "uid" : "56376130-BA12-4368-8501-5C560BE5E048",
+    "name" : "win64",
+    "keyword" : "win64"
+  }
+}

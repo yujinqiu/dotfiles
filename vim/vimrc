@@ -1,7 +1,7 @@
 " -------- Bundles  ---------------------------------------{{{1
 "首先，加载vundle!
 set nocompatible               " be iMproved
-set clipboard=unnamed
+"set clipboard=unnamed
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -12,7 +12,7 @@ let g:vundle_default_git_proto="git"
 
 "---------------------------- 配色 -------------------------{{{2
 "solarized 配色
-"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized
 "molokai
 Plugin 'tomasr/molokai'
 
@@ -36,14 +36,15 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 "Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+"Plugin onza/vim-snippets'
 "snipmate
-Plugin 'garbas/vim-snipmate'
+Plugin 'arbas/vim-snipmate'
 "-----------------------------------2}}}
 "窗口浏览器
 Plugin 'scrooloose/nerdtree'
 "快速查找文件插件CtrlP
 Plugin 'kien/ctrlp.vim'
+
 
 "Jquery
 "Plugin 'jQuery'
@@ -62,7 +63,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'sjl/gundo.vim'
 
 "用过vimoperator吗？那里的f键快速跳转叫你印象深刻吧
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 "vim git 插件
 Plugin 'tpope/vim-fugitive'
@@ -75,11 +76,11 @@ Plugin 'airblade/vim-gitgutter'
 
 "-------------- for Python programmers ------------{{{2
 "Python.vim
-Plugin 'python.vim--Vasiliev'
+"Plugin 'python.vim--Vasiliev'
 "Python mode
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 "pep8 indent.很久以前我就在尋思這個插件，沒有人實現那.現在有啦！好東西哦
-Plugin 'hynek/vim-python-pep8-indent'
+"Plugin 'hynek/vim-python-pep8-indent'
 "jinja2 syntax
 "Plugin 'Glench/Vim-Jinja2-Syntax'
 "--------------------------------------------------2}}}
@@ -87,7 +88,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'vim-coffee-script'
 "---------------------------------------------------2}}}
 "less syntax
-Plugin 'groenewege/vim-less'
+"Plugin 'groenewege/vim-less'
 
 "toml!
 Plugin 'cespare/vim-toml'
@@ -101,6 +102,9 @@ Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'w0rp/ale'
 
+"Plugin 'gyim/vim-boxdraw'
+Plugin 'vim-scripts/DrawIt'
+
 "-------------------------------------------------------------1}}}
 
 
@@ -113,6 +117,9 @@ filetype plugin indent on
 "-------------- 基本-------------------------------------------{{{1
 "去掉边框
 set go=
+" virtualedit so we can jump beyong the end, enable this when you wan to use
+" boxdraw
+"set virtualedit+=all
 syntax enable
 "se nu  "显示行号
 "终端模式:xterm-256color,这个终端模式支持功能键Home,End等
@@ -143,7 +150,7 @@ set shortmess=atI
 set cul
 "合适的高亮当前行的颜色
 hi CursorLine term=none cterm=none ctermbg=3
-set cursorcolumn
+"set cursorcolumn
 "自动切换当前目录为当前文件所在目录
 set autochdir
 "800个字符以上的行不去高亮
@@ -195,7 +202,7 @@ set cindent
 set smartindent
 "For Python Programmers
 autocmd FileType python set textwidth=79 " PEP-8 Friendly
-set colorcolumn=81
+set colorcolumn=181
 "----------------------------------------------------------------------1}}}
 
 "------------------ tab键 --------------------------------------------{{{1
@@ -210,9 +217,9 @@ set softtabstop=4
 set shiftwidth=4
 
 "显示tab键
-set list
+"set list
 "list键的填充字符
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+"set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 "根据文件类型设定缩进,覆盖掉默认的~,来自humiaozuzu
 autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=2 textwidth=120
@@ -232,7 +239,8 @@ autocmd FileType yaml,yml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidt
 set mouse=a
 "可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
 set selection=exclusive
-set selectmode=mouse,key
+"set selectmode=mouse,key
+set selectmode=mouse
 "当敲键盘的时候隐藏鼠标指针
 set mousehide
 set mousemodel=popup
@@ -448,9 +456,9 @@ noremap wj <c-w><down>
 "--------------- 系统剪切板 ---------------
 
 "ctrl-c复制到系统剪切板
-"map <C-c> "+y
+map <C-c> "+y
 "ctrl-v粘贴到系统粘贴板
-"map <C-v> "+p
+map <C-v> "+p
 "----------------------------------------------------------------------1}}}
 
 "--------------  用户自定义命令 --------------------------------------{{{1

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "docker run  --rm --privileged    -it --network=host  --pid=host --ipc=host  nicolaka\/netshoot ",
+    "uid" : "4B13DA5B-19AD-4C01-9A9F-B5B313A4CA7B",
+    "name" : "netshoot",
+    "keyword" : "netshoot"
+  }
+}

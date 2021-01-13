@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "curl  'https:\/\/api.ip.la\/en?json' ",
+    "uid" : "1182D57C-DF93-4E05-8488-79F89C4B5C56",
+    "name" : "ipinfo",
+    "keyword" : "ipinfo"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : " deploy###10.52.3.116@@@\n{\n    \"batchID\": \"{}\",\n    \"services\": [\n        {\n            \"serviceName\":\"{}\",\n            \"tag\": \"{}\",\n            \"conf\": \"\"\n        }\n    ],\n    \"mysql\": \"\",\n    \"redis\": \"\",\n    \"ft\": \"\"\n}",
+    "uid" : "86E70202-4F8A-4191-81B1-632FBAD2AD11",
+    "name" : "build",
+    "keyword" : "build"
+  }
+}

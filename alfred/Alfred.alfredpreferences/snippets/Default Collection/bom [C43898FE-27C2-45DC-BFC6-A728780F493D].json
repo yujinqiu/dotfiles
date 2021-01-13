@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "# 00000000 ef bb bf YES\nhexdump -n 3 -C \n",
+    "uid" : "C43898FE-27C2-45DC-BFC6-A728780F493D",
+    "name" : "bom",
+    "keyword" : "bom"
+  }
+}

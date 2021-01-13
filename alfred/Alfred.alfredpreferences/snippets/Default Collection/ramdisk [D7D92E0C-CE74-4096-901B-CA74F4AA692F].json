@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "diskutil partitionDisk $(hdiutil attach -nomount ram:\/\/2048000) 1 GPTFormat APFS 'ramdisk' '100%'",
+    "uid" : "D7D92E0C-CE74-4096-901B-CA74F4AA692F",
+    "name" : "ramdisk",
+    "keyword" : "ramdisk"
+  }
+}

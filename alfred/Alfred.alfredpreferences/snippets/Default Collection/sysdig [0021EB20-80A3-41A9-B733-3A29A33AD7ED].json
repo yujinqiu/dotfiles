@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "sysdig -A -pc -c echo_fds fd.port=8080",
+    "uid" : "0021EB20-80A3-41A9-B733-3A29A33AD7ED",
+    "name" : "sysdig",
+    "keyword" : "sysdig"
+  }
+}

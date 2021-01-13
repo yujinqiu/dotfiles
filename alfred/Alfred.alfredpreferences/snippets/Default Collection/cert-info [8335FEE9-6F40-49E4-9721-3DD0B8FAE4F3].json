@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "openssl x509 -noout -text  -in ",
+    "uid" : "8335FEE9-6F40-49E4-9721-3DD0B8FAE4F3",
+    "name" : "cert-info",
+    "keyword" : "cert-info"
+  }
+}

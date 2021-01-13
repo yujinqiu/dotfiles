@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "curl -w \"@\/Users\/knight\/.config\/curl\" ",
+    "uid" : "27120AD4-811E-4CF4-AA36-3CE743477BF3",
+    "name" : "curl",
+    "keyword" : "curl"
+  }
+}

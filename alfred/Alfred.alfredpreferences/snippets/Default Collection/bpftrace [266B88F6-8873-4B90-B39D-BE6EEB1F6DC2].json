@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "wget -c https:\/\/s3-qcloud.meiqia.com\/download.meiqia\/bpftrace.tar.gz",
+    "uid" : "266B88F6-8873-4B90-B39D-BE6EEB1F6DC2",
+    "name" : "bpftrace",
+    "keyword" : "bpftrace"
+  }
+}
